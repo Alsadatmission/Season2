@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                textToSpeech.speak(""+edOne.getText().toString(),TextToSpeech.QUEUE_FLUSH,null,null);
+                textToSpeech.speak("Hello How are you",TextToSpeech.QUEUE_FLUSH,null,null);
             }
         });
  
