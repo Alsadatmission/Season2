@@ -7,26 +7,19 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     >
+    <TextView
+        android:id="@+id/tvDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
-   <EditText
-       android:id="@+id/edOne"
-       android:layout_width="match_parent"
-       android:layout_height="250dp"
-       android:hint="Text"
-       android:inputType="textPersonName"
-       android:background="#9CCEE4"
-       />
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Click Here"
         />
-    <TextView
-        android:id="@+id/tvDisplay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+
 
 
 </LinearLayout>
