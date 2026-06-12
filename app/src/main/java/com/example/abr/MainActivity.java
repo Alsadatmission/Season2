@@ -19,6 +19,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     TextView tvDisplay;
     Button button;
+    EditText edOne;
+    int mul=0;
+
 
 
 
@@ -29,14 +32,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         tvDisplay=findViewById(R.id.tvDisplay);
         button=findViewById(R.id.button);
+        edOne=findViewById(R.id.edOne);
 
         button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                tvDisplay.setText("");
-                for(int x=1;x<=100;x++){
-                    if(x==5)continue;
-                    tvDisplay.append("  "+  x);
+                int max=Integer.parseInt(edOne.getText().toString());
+
+                for(int x=1;x<=10;x++){
+                    mul=max*x;
+
+                    tvDisplay.append(max +"*"+ x +"=" +mul+"\n");
 
                 }
             }
