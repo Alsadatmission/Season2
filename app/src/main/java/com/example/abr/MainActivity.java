@@ -35,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 tvDisplay.setText("");
                 for(int x=1;x<=100;x++){
+                    if(x==5)continue;
                     tvDisplay.append("  "+  x);
+
                 }
             }
         });
