@@ -3,6 +3,8 @@ package com.example.abr;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
@@ -19,6 +21,30 @@ public class MainActivity extends AppCompatActivity {
    EditText edOne;
    Button button;
    TextToSpeech textToSpeech;
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
+       // super.onBackPressed();
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Confirm Exit")
+                .setMessage("Do u really want to exit")
+                .setIcon(R.drawable.bird)
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                })
+                .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                        finishAndRemoveTask();
+                    }
+                })
+                .show();
+    }
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -45,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 textToSpeech.speak("Hello How are you",TextToSpeech.QUEUE_FLUSH,null,null);
             }
         });
+
+
  
 
     
